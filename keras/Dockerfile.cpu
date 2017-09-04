@@ -1,4 +1,11 @@
 FROM jupyter/tensorflow-notebook
 
+# Install Keras
 RUN pip install keras
+
+# Install Database tools
+RUN pip install psycopg2 \
+        sqlalchemy \
+        asyncpg \
+        peewee
 
