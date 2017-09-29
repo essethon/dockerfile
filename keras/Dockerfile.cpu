@@ -12,15 +12,15 @@ RUN pip --no-cache-dir install psycopg2 \
 # Upgrade numpy
 RUN pip --no-cache-dir install --upgrade numpy
 RUN pip --no-cache-dir install \
-        pytorch \
         Pillow \
         xgboost \
         geopandas \
         shapely 
 
 # install mxnet
-RUN pip3 --no-cache-dir install mxnet  && \
-    pip3 --no-cache-dir install graphviz
+RUN pip --no-cache-dir install mxnet  && \
+    pip --no-cache-dir install graphviz
 
 # install pytorch
-RUN conda install pytorch torchvision cuda80 -c soumith
+RUN pip --no-cache-dir install http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl \
+RUN pip --no-cache-dir install torchvision
