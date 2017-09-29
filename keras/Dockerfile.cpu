@@ -1,11 +1,26 @@
 FROM jupyter/tensorflow-notebook
 
 # Install Keras
-RUN pip install keras
+RUN pip --no-cache-dir install keras
 
 # Install Database tools
-RUN pip install psycopg2 \
+RUN pip --no-cache-dir install psycopg2 \
         sqlalchemy \
         asyncpg \
         peewee
 
+# Upgrade numpy
+RUN pip --no-cache-dir install --upgrade numpy
+RUN pip --no-cache-dir install \
+        pytorch \
+        Pillow \
+        xgboost \
+        geopandas \
+        shapely 
+
+# install mxnet
+RUN pip3 --no-cache-dir install mxnet  && \
+    pip3 --no-cache-dir install graphviz
+
+# install pytorch
+RUN conda install pytorch torchvision cuda80 -c soumith
