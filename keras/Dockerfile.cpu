@@ -22,5 +22,4 @@ RUN pip --no-cache-dir install mxnet  && \
     pip --no-cache-dir install graphviz
 
 # install pytorch
-RUN pip --no-cache-dir install http://download.pytorch.org/whl/cu75/torch-0.2.0.post3-cp36-cp36m-manylinux1_x86_64.whl \
-RUN pip --no-cache-dir install torchvision
+RUN conda install pytorch torchvision -c soumith
